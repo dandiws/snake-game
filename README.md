@@ -2,6 +2,7 @@
 
 Snake game implemented in React.js, Svelte, and more 
 
+![Screenshoot](screenshoot.png)
 
 ## Start Local Development
 
