@@ -1,6 +1,6 @@
 # Snake Game
 
-Snake game implemented in React.js, Svelte, and more 
+Snake game implemented in React.js, Svelte, Vue.js and more 
 
 ![Screenshoot](screenshoot.png)
 
@@ -21,4 +21,10 @@ yarn start
 ```bash
 cd snake-svelte
 yarn dev
+```
+## Run vue app
+
+```bash
+cd snake-vue
+yarn serve
 ```
