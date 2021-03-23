@@ -160,7 +160,8 @@ class Snake {
 }
 
 class SnakeGrid {
-  constructor (width, height) {
+  constructor (width, height, { defaultLength, growLength } = {}) {
+    this.snakeOpts = { defaultLength, growLength }
     this.foodOptions = ['🫐', '🍓', '🥭', '🍉', '🍊', '🌽']
     this.gridWidth = width
     this.gridHeight = height
@@ -180,7 +181,8 @@ class SnakeGrid {
     return new Snake({
       x: randomX,
       y: randomY,
-      direction: randomDirection
+      direction: randomDirection,
+      ...this.snakeOpts
     })
   }
 
