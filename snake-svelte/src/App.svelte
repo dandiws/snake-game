@@ -1,5 +1,5 @@
 <script>
-  import SnakeGrid from "snake";
+  import SnakeGrid from "snake-core";
 
   export let gridSize;
   export let intervalTime;

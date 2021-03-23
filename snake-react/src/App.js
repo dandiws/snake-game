@@ -1,5 +1,5 @@
 import './App.css'
-import SnakeGrid from 'snake'
+import SnakeGrid from 'snake-core'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 function App ({ gridSize, intervalTime }) {

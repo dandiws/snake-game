@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "private":true,
-  "workspaces":["snake","snake-svelte"],
+  "private": true,
+  "workspaces": ["snake-core", "snake-svelte", "snake-react"],
   "scripts": {}
 }
