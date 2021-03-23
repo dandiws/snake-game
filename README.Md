@@ -1,3 +1,3 @@
 # Snake Game
 
-Snake game implemented in svelte
+Snake game implemented in React.js, Svelte, and more 
