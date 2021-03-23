@@ -16,7 +16,15 @@
   $: grid = snakeGame.getGrid();
   $: foodMoji = snakeGame.food && snakeGame.food.text;
 
-  document.addEventListener("keydown", (e) => {
+  const keydownHandler = (e) => {
+    if (!isStarted) {
+      if (e.key === " ") {
+        startGame();
+        isStarted = true;
+      }
+      return;
+    }
+
     switch (e.key) {
       case "ArrowLeft":
         snakeGame.snake.switchDirection("LEFT");
@@ -30,13 +38,12 @@
       case "ArrowUp":
         snakeGame.snake.switchDirection("UP");
         break;
-      case " ":
-        if (!isStarted) {
-          startGame();
-          isStarted = true;
-        }
+      default:
+        break;
     }
-  });
+  }
+
+  document.addEventListener("keydown", keydownHandler);
 
   function handleGameOver() {
     gameOver = true;
@@ -79,9 +86,13 @@
         <div
           class="
             cell 
-            {cell === 1 ? 'snake' : ''} 
+            {cell === 1
+            ? 'snake'
+            : ''} 
             {cell === 2 ? 'food' : ''}
-            {cell === 3 ? 'head' : ''}
+            {cell === 3
+            ? 'head'
+            : ''}
             "
           data-food={cell === 2 ? foodMoji : ""}
         />
@@ -89,7 +100,9 @@
     {/each}
   </div>
   <div class="toolbar">
-    <button on:click={startGame} disabled={isStarted}>Click or Press space to play</button>
+    <button on:click={startGame} disabled={isStarted}
+      >Click or Press space to play</button
+    >
   </div>
 </main>
 
